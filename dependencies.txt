@@ -11,3 +11,8 @@ mongoose
 npm i -D ------>
 nodemon ..To Watch Our Server 
 concurrently .. to run backend and react server at same time
+
+
+
+///////////////////////
+for config that we have  downlaoded it actually for enviroment variables for that we create config folder and than default.json in it
