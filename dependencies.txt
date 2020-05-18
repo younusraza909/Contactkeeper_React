@@ -1,0 +1,13 @@
+express
+bcryptjs
+jsonwebtoken
+express-validator
+config
+mongoose
+
+
+////DEV DEPENDIENCIES
+
+npm i -D ------>
+nodemon ..To Watch Our Server 
+concurrently .. to run backend and react server at same time
