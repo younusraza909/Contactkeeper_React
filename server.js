@@ -6,6 +6,9 @@ const app = express();
 //Connect  database
 connectDB();
 
+//init middleware in order to eaccept body in post request
+app.use(express.json({ extended: false }));
+
 app.get("/", (req, res) =>
   res.json({ msg: "Welcome To The ContactKeeper API" })
 );
