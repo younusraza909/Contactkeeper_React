@@ -4,6 +4,7 @@ const config = require("config");
 const db = config.get("mongoURI");
 
 const connectDB = async () => {
+  // Return Promises
   try {
     await mongoose.connect(db, {
       //We have to use these paramenters in order to avoid warning
