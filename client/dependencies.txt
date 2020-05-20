@@ -1,0 +1,5 @@
+axios
+react-router-dom
+uuid ---->id generator
+react-transition-group
+
