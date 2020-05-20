@@ -10,7 +10,7 @@ mongoose
 
 npm i -D ------>
 nodemon ..To Watch Our Server 
-concurrently .. to run backend and react server at same time
+concurrently .. to run backend server and react frontend server at same time
 
 
 
