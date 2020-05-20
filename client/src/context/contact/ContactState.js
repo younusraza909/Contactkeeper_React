@@ -40,7 +40,7 @@ const ContactState = (props) => {
     ],
   };
 
-  const { state, dispatch } = useReducer(contactReducer, initialState);
+  const [state, dispatch] = useReducer(contactReducer, initialState);
 
   //Add Contact
 
@@ -58,7 +58,7 @@ const ContactState = (props) => {
 
   return (
     <contactContext.Provider
-      vaue={{
+      value={{
         contacts: state.contacts,
       }}
     >
