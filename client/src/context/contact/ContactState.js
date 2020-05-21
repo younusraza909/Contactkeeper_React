@@ -1,5 +1,6 @@
 import React, { useReducer } from "react";
-import uuid from "uuid";
+import { v4 as uuid } from "uuid";
+// We are using uuid to mimic backend database id generator
 import contactContext from "./contactContext";
 import contactReducer from "./contactReducer";
 
@@ -31,7 +32,7 @@ const ContactState = (props) => {
         type: "personal",
       },
       {
-        id: 1,
+        id: 3,
         name: "Smith Johnson",
         email: "smith@gmail.com",
         phone: "333-333-3333",
@@ -43,8 +44,15 @@ const ContactState = (props) => {
   const [state, dispatch] = useReducer(contactReducer, initialState);
 
   //Add Contact
+  const addContact = (contact) => {
+    contact.id = uuid();
+    dispatch({ type: ADD_CONTACT, payload: contact });
+  };
 
   //Delete Contact
+  const deleteContact = (id) => {
+    dispatch({ type: DELETE_CONTACT, payload: id });
+  };
 
   //Set Current Contact
 
@@ -60,6 +68,8 @@ const ContactState = (props) => {
     <contactContext.Provider
       value={{
         contacts: state.contacts,
+        addContact,
+        deleteContact,
       }}
     >
       {props.children}
