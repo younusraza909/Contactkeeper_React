@@ -25,14 +25,17 @@ export default (state, action) => {
         error: null,
       };
     case REGISTER_SUCCESS:
+    case LOGIN_SUCCESS:
       localStorage.setItem("token", action.payload);
       return {
         ...state,
         isAuthenticated: true,
+        token: localStorage.getItem("token"),
         loading: false,
       };
     case REGISTER_FAIL:
     case AUTH_ERROR:
+    case LOGIN_FAIL:
       localStorage.removeItem("token");
       return {
         ...state,
