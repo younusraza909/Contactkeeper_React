@@ -7,7 +7,7 @@ const auth = require("../middleware/auth");
 const { check, validationResult } = require("express-validator");
 const User = require("../models/User");
 
-//@route  GET api/users
+//@route  GET api/auth
 //@desc   Logged in user
 //@access  Private
 
@@ -23,7 +23,7 @@ router.get("/", auth, async (req, res) => {
   }
 });
 
-//@route  POST api/users
+//@route  POST api/auth
 //@desc   auth user & get token
 //@access  Public
 
@@ -71,7 +71,7 @@ router.post(
       );
     } catch (err) {
       console.err(err.message);
-      res.status(500).send("Server Error");
+      res.status(500).json({ msg: "Server Error" });
     }
   }
 );
